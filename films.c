@@ -19,18 +19,18 @@
  */
 int main(int argc, char** argv) {
     
-    FILE *openF;
-    		char buf[1000];
+    FILE *filmFile;
+    char buf[8000];
 
-    		openF =fopen("input.txt","r");
-    		if (!openF)
-        		return 1;
+    filmFile = fopen("films.txt", "r");
+    if (!filmFile)
+        return 1;
 
-    		while (fgets(buf,1000, openF)!=NULL)
-        		printf("%s",buf);
+    while (fgets(buf, 8000, filmFile) != NULL)
+        printf("%s", buf);
 
-		fclose(openF);
-    		return 0;
+    fclose(filmFile);
+    return 0;
 
     return (EXIT_SUCCESS);
 }
