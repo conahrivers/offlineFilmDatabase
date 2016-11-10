@@ -18,8 +18,16 @@
 extern "C" {
 #endif
 
-
-
+typedef struct filmlist {
+  
+  char title [50];
+  int releaseYear[4];
+  char rating[4];
+  char genre[20];
+  int runTime[3];
+  double rating[3];
+} films;
+  
 
 #ifdef __cplusplus
 }
