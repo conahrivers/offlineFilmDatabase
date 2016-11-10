@@ -18,8 +18,9 @@
 extern "C" {
 #endif
 
-
-
+typedef struct filmlist {
+  
+  int title
 
 #ifdef __cplusplus
 }
