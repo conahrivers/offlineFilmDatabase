@@ -18,32 +18,50 @@
 
 /***************************************************************/
 typedef struct filmList {
-  
-  char title [50];
-  int releaseYear[4];                                                            //creating struct with fields
-  char rating[4];
-  char genre[20];
-  int runTime[3];
-  double rating[3];
-  struct filmList *next; //self referential structure
-  
-} Node;
+    char title [50];
+    int releaseYear[4]; //creating struct with fields
+    char agerating[4];
+    char genre[20];
+    int runTime[3];
+    double rating [3];
+    struct filmList *next; //self referential structure
+
+} films;
+
 /***************************************************************/
 
 int main(int argc, char** argv) {
-    
-    
-    
+
+/***************************************************************/
+
+    char title;
+    int releaseYear;
+    char ageRating;
+    char genre;
+    int runTime;
+    double rating;
+
 /***************************************************************/
     FILE *pToFile = fopen("films.txt", "r");
 
-    int line = 0;
+    int count = 0;
 
-    char input[800];
+    char line [800];
 
-    while (fgets(input, 800, pToFile)) {
-        line++;
-        printf("Line: %d -> %s", line, input);                                   //opens the file
+    while (fgets(line, sizeof (line), pToFile) != NULL) {
+        count++;
+        printf("%s", line); //opens the file
+        
+
+       sscanf(line, "%s", \"%[^\"]\"," title, releaseYear, ageRating, genre, runTime, rating);
+       printf("Title: %s \n" 
+              "Release Year: %d \n"
+              "Age Rating: %s \n"
+              "Genre: %s \n"
+              "Run Time: %d \n"
+              "Rating: %l.f \n ", title, releaseYear, ageRating, genre, runTime,
+               rating
+               );
 
         if (pToFile == NULL) {
             printf("Error: unable to open 'films.txt' in mode 'r' \n");
@@ -51,31 +69,11 @@ int main(int argc, char** argv) {
             exit(EXIT_FAILURE);
         }
     }
+ 
+    printf("\n Total fils: %d", count);
     printf("\n\n End program\n");
 
     fclose(pToFile);
-/***************************************************************/
+    /***************************************************************/
     return (EXIT_SUCCESS);
 }
-
-/** 
- * FILE *pToFile = fopen("films.txt", "r");
-
-    int line = 0;
-
-    char input[800];
-
-    while (fgets(input, 800, pToFile)) {
-        line++;
-        printf("Line: %d -> %s", line, input);
-
-        if (pToFile == NULL) {
-            printf("Error: unable to open 'films.txt' in mode 'r' \n");
-
-            exit(EXIT_FAILURE);
-        }
-    }
-    printf("\n\n End program\n");
-
-    fclose(pToFile);
- **/
