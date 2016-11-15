@@ -15,7 +15,7 @@
 #include <stdlib.h>
 
 /***************************************************************/
-typedef struct filmList {
+/** typedef struct filmList {
     char title [50];
     int releaseYear[4]; //creating struct with fields
     char agerating[4];
@@ -24,61 +24,14 @@ typedef struct filmList {
     double rating [3];
     struct filmList *next; //points to dummy node
 
-} films;
+} films; **/
 
 /***************************************************************/
 
 int main(int argc, char** argv) {
-
-/***************************************************************/
-
-    char title;
-    int releaseYear;
-    char ageRating;
-    char genre;
-    int runTime;
-    float rating;
-
-/***************************************************************/
-    FILE *pToFile = fopen("films.txt", "r");
-
-    int count = 0;
-
-    char line [800];
     
-/***************************************************************/
-    
-    while (fgets(line, sizeof (line), pToFile) != NULL) {
-        count++;
-        printf("%s", line); //opens the file
-
-
-        /** sscanf(line, "%s", "%d", "%s", "%s", "%d", "%f",  \"%[^\]"\, title, &releaseYear, ageRating, genre, &runTime, &rating);
-         * 
-         printf("Title: %s \n" 
-                "Release Year: %d \n"
-                "Age Rating: %s \n"
-                "Genre: %s \n"
-                "Run Time: %d \n"
-                "Rating: %.1f \n ", title, releaseYear, ageRating, genre, runTime,
-                 rating
-                 ); **/
-
-        if (pToFile == NULL) {
-            printf("Error: unable to open 'films.txt' in mode 'r' \n");
-
-            exit(EXIT_FAILURE);
-        }
-    }
-
-/***************************************************************/
-    
-    printf("\n Total fils: %d", count);
-    printf("\n\n End program\n");
-
-    fclose(pToFile);
-    
-/***************************************************************/
+    printfuction();
     
     return (EXIT_SUCCESS);
 }
+    
