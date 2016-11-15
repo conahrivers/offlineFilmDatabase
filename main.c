@@ -30,7 +30,7 @@ typedef struct filmList {
 
 int main(int argc, char** argv) {
 
-    /***************************************************************/
+/***************************************************************/
 
     char title;
     int releaseYear;
@@ -39,13 +39,15 @@ int main(int argc, char** argv) {
     int runTime;
     float rating;
 
-    /***************************************************************/
+/***************************************************************/
     FILE *pToFile = fopen("films.txt", "r");
 
     int count = 0;
 
     char line [800];
-
+    
+/***************************************************************/
+    
     while (fgets(line, sizeof (line), pToFile) != NULL) {
         count++;
         printf("%s", line); //opens the file
@@ -69,10 +71,14 @@ int main(int argc, char** argv) {
         }
     }
 
+/***************************************************************/
+    
     printf("\n Total fils: %d", count);
     printf("\n\n End program\n");
 
     fclose(pToFile);
-    /***************************************************************/
+    
+/***************************************************************/
+    
     return (EXIT_SUCCESS);
 }
