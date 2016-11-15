@@ -6,9 +6,9 @@
 
 /* 
  * File:   moviedatabase.h
- * Author: conah
+ * Author: ebx15jtu
  *
- * Created on 10 November 2016, 12:06
+ * Created on 15 November 2016, 11:56
  */
 
 #ifndef MOVIEDATABASE_H
@@ -18,7 +18,16 @@
 extern "C" {
 #endif
 
+typedef struct filmList {
+    char title [50];
+    int releaseYear[4]; //creating struct with fields
+    char agerating[4];
+    char genre[20];
+    int runTime[3];
+    double rating [3];
+    struct filmList *next; //points to dummy node
 
+} films;
 
 
 #ifdef __cplusplus
