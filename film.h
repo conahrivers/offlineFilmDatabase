@@ -20,14 +20,49 @@ extern "C" {
 
 typedef struct filmlist {
   
-  char title [50];
-  int releaseYear[4];
-  char rating[4];
-  char genre[20];
-  int runTime[3];
-  double rating[3];
-} films;
+  char* title [50];
+  int releaseYear;
+  char* certifiate[4];
+  char* genre[20];
+  int runTime;
+  float rating;
   
+} films;
+
+films *film_new(char title, int releaseYear, char certificte, char genre, int runTime, double rating);
+
+void file_free(films *film);
+void void film_fprint(FILE *PToFile, const films *film);
+
+char* title_getTitle(const films *film) {
+    
+    return film->title;
+}
+
+int releaseYear_getYear(const films *film) {
+    
+    return film->releaseYear;
+}
+
+char* certifice_getCert(const films *film) {
+    
+    return film->certifiate;
+}
+
+char* genre_getGenre(const films *film) {
+    
+    return film->genre;
+}
+
+int runTime_getRun(const films *film) {
+    
+    return film->runTime;
+}
+
+float rating_getRating(const films *film) {
+    
+    return film->rating;
+}
 
 #ifdef __cplusplus
 }
